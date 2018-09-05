@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     public static final String LOG_TAG = MainActivity.class.getName();
 
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2018-09-03&api-key=test&show-tags=contributor";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2018-09-04&api-key=test&show-tags=contributor";
 
     private TextView mEmptyStateTextView;
     private ProgressBar mProgressBar;

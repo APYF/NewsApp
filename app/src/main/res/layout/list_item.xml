@@ -6,6 +6,7 @@
     android:paddingEnd="@dimen/list_item_padding"
     android:paddingLeft="@dimen/list_item_side_padding"
     android:paddingRight="@dimen/list_item_side_padding"
+    android:paddingTop="@dimen/list_item_padding"
     android:paddingBottom="@dimen/list_item_padding"
     android:paddingStart="@dimen/list_item_padding">
 
@@ -60,13 +61,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/story_publish_data"
+            android:id="@+id/story_publish_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textColor="@color/storyTextColor"
             android:textSize="@dimen/story_secondary_font_size"
-            tools:text="Mar 6, 2010" />
+            tools:text="Mar 6 2010" />
+
+        <TextView
+            android:id="@+id/story_publish_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textColor="@color/storyTextColor"
+            android:textSize="@dimen/story_secondary_font_size"
+            tools:text="09:10 PDT" />
 
     </LinearLayout>
 </LinearLayout>
