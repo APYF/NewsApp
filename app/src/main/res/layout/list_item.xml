@@ -1,19 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingEnd="@dimen/list_item_padding"
-    android:paddingLeft="@dimen/list_item_padding"
-    android:paddingRight="@dimen/list_item_padding"
+    android:paddingLeft="@dimen/list_item_side_padding"
+    android:paddingRight="@dimen/list_item_side_padding"
+    android:paddingBottom="@dimen/list_item_padding"
     android:paddingStart="@dimen/list_item_padding">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/list_item_padding"
-        android:layout_marginStart="@dimen/list_item_padding"
+        android:layout_marginLeft="@dimen/list_item_side_padding"
+        android:layout_marginStart="@dimen/list_item_side_padding"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -22,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
             android:maxLines="1"
             android:textAllCaps="true"
             android:textColor="@color/sectionTextColor"
@@ -34,18 +34,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="4"
             android:textColor="@color/storyTextColor"
             android:textSize="@dimen/story_main_font_size"
-            tools:text="New story text goes here." />
+            tools:text="New story text goes here. The title of the news story might run a couple of lines." />
 
         <TextView
             android:id="@+id/story_contributors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2"
-            android:textColor="@color/storyTextColor"
+            android:maxLines="1"
+            android:textColor="@color/sectionTextColor"
             android:textSize="@dimen/story_secondary_font_size"
             tools:text="Mark Twain" />
 

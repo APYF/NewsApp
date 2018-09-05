@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (newsStories != null && !newsStories.isEmpty()) {
-            Log.i(LOG_TAG, "In onLoadFinished adding earthquakes");
+            Log.i(LOG_TAG, "In onLoadFinished adding news stories");
 
             mAdapter.addAll(newsStories);
         }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoaderReset(Loader<List<NewsStory>> loader) {
-        Log.i(LOG_TAG, "In onLoaderReset clearing adapter");
+        Log.i(LOG_TAG, "In onLoaderReset clear adapter");
 
         mAdapter.clear();
     }

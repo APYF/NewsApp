@@ -22,7 +22,7 @@ public class NewsStoryAdapter extends ArrayAdapter<NewsStory> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;
 
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
@@ -36,7 +36,14 @@ public class NewsStoryAdapter extends ArrayAdapter<NewsStory> {
         storyTitleTextView.setText(currentNewsStory.getStoryTitle());
 
         TextView storyContributorsTextView = (TextView) listItemView.findViewById(R.id.story_contributors);
-        storyContributorsTextView.setText(currentNewsStory.getAuthor());
+
+        // if the author name is "" then hide the storyContributorTextView
+        if (currentNewsStory.getAuthor().equals("")) {
+            storyContributorsTextView.setVisibility(View.GONE);
+
+        } else {
+            storyContributorsTextView.setText(currentNewsStory.getAuthor());
+        }
 
         TextView storyPublishDateTextView = (TextView) listItemView.findViewById(R.id.story_publish_data);
         storyPublishDateTextView.setText(currentNewsStory.getPublishedDate());

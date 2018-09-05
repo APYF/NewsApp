@@ -56,21 +56,22 @@ public final class QueryUtils {
                 String title = currentNewsStory.getString("webTitle");
 
                 // contributors to articles are stored in tags
-                // there can be multiple contributors so extra them and put them into author
+                // there can be no or multiple contributors so extract them and put them into author
                 JSONArray storyTagsArray = currentNewsStory.getJSONArray("tags");
                 String author = "";
-                for (int j = 0; j < storyTagsArray.length(); j++) {
-                    if (j > 0) {
-                        author.concat(", ");
+
+                    for (int j = 0; j < storyTagsArray.length(); j++) {
+
+                        JSONObject currentAuthor = storyTagsArray.getJSONObject(j);
+                        author = currentAuthor.getString("webTitle");
                     }
-                    JSONObject currentAuthor = storyTagsArray.getJSONObject(j);
-                    author.concat(currentAuthor.getString("webTitle"));
-                }
+
 
                 String publishDate = currentNewsStory.getString("webPublicationDate");
                 String url = currentNewsStory.getString("webUrl");
 
                 // Create a new {@Link NewsStory} object
+                Log.i(LOG_TAG, "Story is: " + sectionName + " : " + title + " : " + author + " : " + publishDate );
                 NewsStory newsStory = new NewsStory(sectionName, title, author, publishDate, url);
                 newsStories.add(newsStory);
             }
