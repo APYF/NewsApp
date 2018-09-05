@@ -44,7 +44,8 @@ public final class QueryUtils {
             JSONObject baseJsonResponse = new JSONObject(newsStoriesJSON);
             // Extract the JSONArray associated with the key called "results",
             // which represents a list of news stories
-            JSONArray newStoriesArray = baseJsonResponse.getJSONArray("results");
+            JSONObject jsonResponse = baseJsonResponse.getJSONObject("response");
+            JSONArray newStoriesArray = jsonResponse.getJSONArray("results");
 
             // for each newStory in the newStoriesArray, create an {@link NewsStory} object
             for (int i = 0; i < newStoriesArray.length(); i++) {
@@ -57,7 +58,7 @@ public final class QueryUtils {
                 // contributors to articles are stored in tags
                 // there can be multiple contributors so extra them and put them into author
                 JSONArray storyTagsArray = currentNewsStory.getJSONArray("tags");
-                String author = null;
+                String author = "";
                 for (int j = 0; j < storyTagsArray.length(); j++) {
                     if (j > 0) {
                         author.concat(", ");
