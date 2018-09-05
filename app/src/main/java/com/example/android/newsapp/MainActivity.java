@@ -1,5 +1,6 @@
 package com.example.android.newsapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
@@ -19,11 +20,11 @@ import android.app.LoaderManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<NewsStory>> {
+public class MainActivity extends Activity implements LoaderManager.LoaderCallbacks<List<NewsStory>> {
 
     public static final String LOG_TAG = MainActivity.class.getName();
 
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2018-09-04&api-key=test&show-tags=contributor";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?from-date=2018-09-04&api-key=test&page-size=50&order-by=newest&show-tags=contributor";
 
     private TextView mEmptyStateTextView;
     private ProgressBar mProgressBar;
@@ -87,8 +88,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<List<NewsStory>> onCreateLoader(int i, Bundle args) {
         // Create a new loader for the given URL
-        Log.i(LOG_TAG, "In onCreateLoader");
-
         return new NewsStoryLoader(this, GUARDIAN_URL);
     }
 
@@ -103,8 +102,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (newsStories != null && !newsStories.isEmpty()) {
-            Log.i(LOG_TAG, "In onLoadFinished adding news stories");
-
             mAdapter.addAll(newsStories);
         }
         mProgressBar.setVisibility(View.GONE);

@@ -71,15 +71,12 @@ public final class QueryUtils {
                 String url = currentNewsStory.getString("webUrl");
 
                 // Create a new {@Link NewsStory} object
-                Log.i(LOG_TAG, "Story is: " + sectionName + " : " + title + " : " + author + " : " + publishDate );
                 NewsStory newsStory = new NewsStory(sectionName, title, author, publishDate, url);
                 newsStories.add(newsStory);
             }
-
         } catch (JSONException e) {
             Log.e(LOG_TAG, "Problem parsing the news JSON results.", e);
         }
-
         return newsStories;
     }
 
@@ -137,7 +134,6 @@ public final class QueryUtils {
         return output.toString();
     }
 
-
     /**
      * Make an HTTP request to the given URL and return a String as the response.
      */
@@ -181,6 +177,4 @@ public final class QueryUtils {
         }
         return jsonResponse;
     }
-
-
 }
