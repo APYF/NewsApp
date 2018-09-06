@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
 
     public static final String LOG_TAG = MainActivity.class.getName();
 
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?from-date=2018-09-04&api-key=test&page-size=50&order-by=newest&show-tags=contributor";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?from-date=2018-09-05&api-key=252561fb-f83e-457b-bd15-eb5980872153&page-size=50&order-by=newest&show-tags=contributor";
 
     private TextView mEmptyStateTextView;
     private ProgressBar mProgressBar;
