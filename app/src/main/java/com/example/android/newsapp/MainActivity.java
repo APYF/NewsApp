@@ -20,7 +20,7 @@ import android.app.LoaderManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity implements LoaderManager.LoaderCallbacks<List<NewsStory>> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<NewsStory>> {
 
     public static final String LOG_TAG = MainActivity.class.getName();
 
